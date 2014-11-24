@@ -15,10 +15,11 @@ public class Gui extends JPanel {
 
     private final Board board = new Board();
     private final int tileSize;
-    private static int WINDOWSIZE_WIDTH = 438;
-    private static int WINDOWSIZE_HEIGHT = 458;
+    private static int WINDOWSIZE_WIDTH = 648;
+    private static int WINDOWSIZE_HEIGHT = 460;
 
     public Gui() {
+        setBackground(Color.black);
         setFocusable(true);
         KeyListener listener = new KeyListener();
         addKeyListener(listener);
