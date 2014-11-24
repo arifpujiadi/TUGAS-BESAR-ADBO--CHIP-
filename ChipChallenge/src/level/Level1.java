@@ -136,4 +136,14 @@ public class Level1 extends Level {
     public Point getInitialChipCoordinate() {
         return new Point(12, 12);
     }
+    
+    @Override
+    public String[] getMessage() {
+        return message;
+    }
+
+    @Override
+    public int getLevelName() {
+        return 1;
+    }
 }

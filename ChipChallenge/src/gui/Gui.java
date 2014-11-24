@@ -63,6 +63,10 @@ public class Gui extends JPanel {
             }
         }
         g2d.drawImage(board.getChip().getImage(), 192, 192, this);
+        g2d.setColor(Color.white);
+        g2d.setFont(new Font("Arial", Font.PLAIN, 14));
+        g2d.drawString("Level " + board.getIndexLevel(), 440, 40);
+        g2d.drawString("Chips yang tersisa : " + (board.getChip().getICRequired() - board.getChip().getICAcquired()), 440, 70);
         if (this.board.getCondition() != 0) {
             g2d.setColor(Color.BLACK);
             g2d.setFont(new Font("Arial", Font.BOLD, 48));

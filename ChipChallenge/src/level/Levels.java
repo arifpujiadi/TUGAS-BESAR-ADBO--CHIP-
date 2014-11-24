@@ -57,4 +57,12 @@ public class Levels {
     public void resetLevel() {
         this.currentLevel.createMap();
     }
+    
+    public boolean endLevel() {
+        return this.getCurrentLevel() == this.listLevel.getLast();
+    }
+    
+    public Level getCurrentLevel() {
+        return currentLevel;
+    }
 }

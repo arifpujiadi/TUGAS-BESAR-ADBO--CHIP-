@@ -1,12 +1,6 @@
 package level;
 
-import tiles.Wall;
-import tiles.Tile;
-import tiles.Shoes;
-import tiles.Key;
-import tiles.IC;
-import tiles.Door;
-import tiles.Barrier;
+import tiles.*;
 import java.awt.*;
 import tiles.*;
 
@@ -34,6 +28,7 @@ public abstract class Level {
     protected Wall wall;
     protected Shoes redShoes;
     protected Shoes blueShoes;
+    protected String[] message;
 
     public Level() {
         this.barrier = new Barrier();
@@ -72,4 +67,8 @@ public abstract class Level {
     protected abstract void createMap();
 
     public abstract void initializeLevel();
+    
+    public abstract String[] getMessage();
+
+    public abstract int getLevelName();
 }

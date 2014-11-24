@@ -21,8 +21,10 @@ public class Board {
     private Chip chip;
     private int ICRequired;
     private Levels level;
+    private int iLevel;
 
     public Board() {
+        this.iLevel = 1;
         this.level = new Levels();
         this.set();
     }
@@ -88,5 +90,17 @@ public class Board {
     public void reset() {
         this.level.resetLevel();
         this.set();
+    }
+    
+    public boolean endGame() {
+        return this.getCondition() == 1 && this.getLevel().endLevel();
+    }
+    
+    public int getIndexLevel() {
+        return this.iLevel;
+    }
+    
+    public Levels getLevel() {
+        return level;
     }
 }
