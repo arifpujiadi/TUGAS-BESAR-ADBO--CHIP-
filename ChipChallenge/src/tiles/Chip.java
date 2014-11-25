@@ -113,7 +113,7 @@ public class Chip implements Drawable {
         this.y += moveY;
     }
 
-    public void takeObject(TileObject object) {
+    public TileObject takeObject(TileObject object) {
         if (object != null) {
             if (object.getClass().equals(IC.class)) {
                 this.ICAcquired++;
@@ -137,6 +137,7 @@ public class Chip implements Drawable {
                 }
             }
         }
+        return object;
     }
 
     public int getICAcquired() {
