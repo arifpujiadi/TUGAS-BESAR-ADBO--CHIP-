@@ -183,6 +183,7 @@ public class Board {
         this.ICRequired = this.level.getICRequired();
         this.chip = new Chip(this.level.getInitialChipCoordinate().x, this.level.getInitialChipCoordinate().y, this.ICRequired);
         this.tiles = this.level.getMap();
+        clearInven();
     }
     
     /**

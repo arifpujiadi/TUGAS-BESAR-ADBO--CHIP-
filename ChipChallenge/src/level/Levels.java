@@ -46,7 +46,7 @@ public class Levels {
      * @return jumlah IC bertipe integer
      */
     public int getICRequired() {
-        return this.currentLevel.getICRequired();
+        return this.getCurrentLevel().getICRequired();
     }
     
     /**
@@ -54,7 +54,7 @@ public class Levels {
      * @return lebar bertipe integer
      */
     public int getWidth() {
-        return this.currentLevel.getWidth();
+        return this.getCurrentLevel().getWidth();
     }
     
     /**
@@ -62,7 +62,7 @@ public class Levels {
      * @return panjang bertipe integer
      */
     public int getLength() {
-        return this.currentLevel.getLength();
+        return this.getCurrentLevel().getLength();
     }
     
     /**
@@ -70,7 +70,7 @@ public class Levels {
      * @return Tile bertipe array 2 dimensi
      */
     public Tile[][] getMap() {
-        return this.currentLevel.getMap();
+        return this.getCurrentLevel().getMap();
     }
     
     /**
@@ -78,7 +78,7 @@ public class Levels {
      * @return kordinat chip bertipe Point
      */
     public Point getInitialChipCoordinate() {
-        return this.currentLevel.getInitialChipCoordinate();
+        return this.getCurrentLevel().getInitialChipCoordinate();
     }
     
     /**
@@ -98,7 +98,7 @@ public class Levels {
      * Method untuk mereset level sekarang.
      */
     public void resetLevel() {
-        this.currentLevel.createMap();
+        this.getCurrentLevel().createMap();
     }
     
     /**

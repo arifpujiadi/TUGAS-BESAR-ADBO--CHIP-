@@ -11,6 +11,10 @@ import tiles.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object barrier.
+ * @author i08023
+ */
 public class Barrier extends TileObject implements Conditional {
 
     public Barrier() {

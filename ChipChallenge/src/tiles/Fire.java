@@ -11,8 +11,15 @@ import tiles.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object fire.
+ * @author i08023
+ */
 public class Fire extends TileObject implements Conditional {
 
+    /**
+     * Penunjuk gambar sekarang.
+     */
     private int imageIterator;
 
     public Fire() {

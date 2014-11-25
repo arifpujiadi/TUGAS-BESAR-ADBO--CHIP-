@@ -11,6 +11,10 @@ import tiles.TileObject;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object wall.
+ * @author i08023
+ */
 public class Wall extends TileObject {
 
     public Wall() {

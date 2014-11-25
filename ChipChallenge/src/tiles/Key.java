@@ -11,8 +11,15 @@ import tiles.TileObject;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object key.
+ * @author i08023
+ */
 public class Key extends TileObject {
-
+    
+    /**
+     * warna kunci (Red , Green , Blue, Yellow)
+     */
     private Color color;
 
     public Key(Color color) {
@@ -42,7 +49,11 @@ public class Key extends TileObject {
     public boolean canBeTaken() {
         return true;
     }
-
+    
+    /**
+     * Mengembalikan warna
+     * @return color bertipe Color
+     */
     public Color getColor() {
         return this.color;
     }

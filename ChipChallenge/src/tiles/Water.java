@@ -11,8 +11,15 @@ import tiles.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object water.
+ * @author i08023
+ */
 public class Water extends TileObject implements Conditional {
 
+    /**
+     * Penunjuk gambar sekarang.
+     */
     private int imageIterator;
 
     public Water() {

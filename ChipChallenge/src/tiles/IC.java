@@ -10,6 +10,10 @@ import tiles.TileObject;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object IC.
+ * @author i08023
+ */
 public class IC extends TileObject {
 
     public IC() {

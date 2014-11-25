@@ -11,8 +11,15 @@ import tiles.TileObject;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object finish.
+ * @author i08023
+ */
 public class Finish extends TileObject {
-
+    
+    /**
+     * Penunjuk gambar sekarang.
+     */
     private int imageIterator;
 
     public Finish() {

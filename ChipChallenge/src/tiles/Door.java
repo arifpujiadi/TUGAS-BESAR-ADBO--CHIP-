@@ -11,8 +11,15 @@ import tiles.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object door.
+ * @author i08023
+ */
 public class Door extends TileObject {
-
+    
+    /**
+     * Warna pintu.
+     */
     private Color color;
 
     public Door(Color color) {
@@ -43,6 +50,11 @@ public class Door extends TileObject {
         return true;
     }
 
+    /**
+     * Memeriksa apakah chip memiliki kunci dengan warna pintu yang sama.
+     * @param chip player
+     * @return true, jika warna key sama dengan warna pintu
+     */
     public boolean openDoor(Chip chip) {
         if (chip.getColoredKeyAcquired(this.color) > 0) {
             chip.useKey(color);

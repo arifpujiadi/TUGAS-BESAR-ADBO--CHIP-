@@ -11,21 +11,89 @@ import tiles.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object chip.
+ * @author i08023
+ */
 public class Chip implements Drawable {
-
+    
+    /**
+     * Menyimpan posisi chip secara horizontal.
+     */
     private int x;
+    
+    /**
+     * Menyimpan posisi chip secara vertical.
+     */
     private int y;
+    
+    /**
+     * Menyimpan status chip.<br>
+     * -1: kalah<br>
+     * 1: menang<br>
+     * 0: masih bermain
+     */
     private int win;
+    
+    /**
+     * Menyimpan jumlah IC yang telah diambil oleh chip.
+     */
     private int ICAcquired;
+    
+    /**
+     * Menyimpan jumlah IC yang diperlukan oleh chip untuk menyelesaikan level.
+     */
     private final int ICRequired;
+    
+    /**
+     * Menyimpan warna-warna kunci. <br>
+     * [0]Red<br>
+     * [1]Green<br>
+     * [2]Blue<br>
+     * [3]Yellow
+     */
     private int[] coloredKey;
+    
+    /**
+     * Menyimpan sepatu chip. <br>
+     * [0]Red <br>
+     * [1]Blue
+     */
     private Shoes[] shoes;
+    
+    /**
+     * Menyimpan image gambar chip.
+     */
     private Image image;
+    
+    /**
+     * Menyimpan image gambar atas chip.
+     */
     private Image up;
+    
+    /**
+     * Menyimpan image gambar bawah chip.
+     */
     private Image down;
+    
+    /**
+     * Menyimpan image gambar kiri chip.
+     */
     private Image left;
+    
+    /**
+     * Menyimpan image gambar kanan chip.
+     */
     private Image right;
+    
+    /**
+     * Menyimpan image chip terbakar.
+     */
     private Image burnt;
+    
+    /**
+     * Attribute Image untuk gambar chip tenggelam.
+     */
     private Image drown;
 
     public Chip(int x, int y, int ICRequired) {
@@ -50,6 +118,13 @@ public class Chip implements Drawable {
         }
     }
 
+    /**
+     * Memeriksa apakah chip dapat bergerak atau tidak.
+     * @param object objek yang ingin diinjak
+     * @param moveX perubahan x
+     * @param moveY perubahan y
+     * @return true jika chip dapat bergerak.
+     */
     public boolean move(TileObject object, int moveX, int moveY) {
         this.changeDirection(moveX, moveY);
         if (object != null && object.canBeStepped() == -1) {
@@ -95,7 +170,12 @@ public class Chip implements Drawable {
             return true;
         }
     }
-
+    
+    /**
+     * Merubah gambar arah gerak chip.
+     * @param moveX
+     * @param moveY
+     */
     private void changeDirection(int moveX, int moveY) {
         if (moveX > 0) {
             this.image = right;
@@ -107,12 +187,22 @@ public class Chip implements Drawable {
             this.image = up;
         }
     }
-
+    
+    /**
+     * Menjalankan chip.
+     * @param moveX perubahan x
+     * @param moveY perubahan y
+     */
     private void move(int moveX, int moveY) {
         this.x += moveX;
         this.y += moveY;
     }
-
+    
+    /**
+     * Mendapatkan objek yang ada di tile.
+     * @param object objek yang diambil di tile
+     * @return object bertipe TileObject
+     */
     public TileObject takeObject(TileObject object) {
         if (object != null) {
             if (object.getClass().equals(IC.class)) {
@@ -139,15 +229,28 @@ public class Chip implements Drawable {
         }
         return object;
     }
-
+    
+    /**
+     * Mengembalikan jumlah IC yang diperoleh chip.
+     * @return jumlah IC bertipe integer
+     */
     public int getICAcquired() {
         return this.ICAcquired;
     }
 
+    /**
+     * Mengembalikan jumlah IC yang diperlukan.
+     * @return jumlah IC bertipe integer
+     */
     public int getICRequired() {
         return this.ICRequired;
     }
 
+    /**
+     * Mengembalikan warna kunci yang diperoleh chip.
+     * @param color warna dari key
+     * @return jumlah key yang dimiliki chip
+     */
     public int getColoredKeyAcquired(Color color) {
         if (color.equals(Color.RED)) {
             return this.coloredKey[0];
@@ -160,7 +263,12 @@ public class Chip implements Drawable {
         }
         return 0;
     }
-
+    
+    /**
+     * Warna sepatu yang diperoleh chip
+     * @param color warna
+     * @return true jika ada
+     */
     public boolean hasShoes(Color color) {
         if (color.equals(Color.RED)) {
             return !(this.shoes[0] == null);
@@ -170,6 +278,10 @@ public class Chip implements Drawable {
         return false;
     }
 
+    /**
+     * Jumlah key yang chip butuhkan.
+     * @param color bertipe Color
+     */
     public void useKey(Color color) {
         if (color.equals(Color.RED)) {
             this.coloredKey[0]--;
@@ -182,18 +294,33 @@ public class Chip implements Drawable {
         }
     }
 
+    /**
+     * Mengembalikan posisi horizontal chip.
+     * @return x bertipe integer
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * Mengembalikan posisi vertical chip.
+     * @return y bertipe integer
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * Mengembalikan status chip.
+     * @return -1 jika sudah kalah, 1 jika sudah menang, 0 jika belum keduanya
+     */
     public int getCondition() {
         return this.win;
     }
-
+    
+    /**
+     * Method untuk mengembalikan kondisi chip untuk melanjutkan permainan.
+     */
     public void setDefaultCondition() {
         this.win = 0;
     }

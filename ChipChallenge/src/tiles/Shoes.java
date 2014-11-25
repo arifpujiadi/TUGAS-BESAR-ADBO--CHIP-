@@ -11,8 +11,15 @@ import tiles.*;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/**
+ * Menyimpan informasi mengenai object shoes.
+ * @author i08023
+ */
 public class Shoes extends TileObject {
 
+    /**
+     * warna sepatu (Red , Blue)
+     */
     private Color color;
 
     public Shoes(Color color) {
@@ -39,6 +46,10 @@ public class Shoes extends TileObject {
         return true;
     }
 
+    /**
+     * Mendapatkan warna sepatu.
+     * @return warna bertipe Color
+     */
     public Color getColor() {
         return this.color;
     }
